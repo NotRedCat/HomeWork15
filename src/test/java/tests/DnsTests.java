@@ -3,7 +3,6 @@ package tests;
 import com.codeborne.selenide.CollectionCondition;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -18,7 +17,7 @@ public class DnsTests {
         open("https://www.dns-shop.ru/profile/wishlist/");
         $(".profile-wishlist__empty-text").shouldHave(text("В списке пока нет ни одного избранного товара"));
         open("https://www.dns-shop.ru/catalog/17a8a05316404e77/planshety/");
-        $(".catalog-product a").click();
+        $("div.catalog-product a").click();
         $(".wishlist-btn").click();
         $(".wishlist-link__badge").shouldHave(text("1"));
     }
