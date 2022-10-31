@@ -29,14 +29,23 @@ public class TestBase {
         System.setProperty("properties", "remote");
         DriverConfig config = ConfigFactory.create(DriverConfig.class, System.getProperties());
 
-        if (config.getRemoteURL() != null) {
-            Configuration.remote = config.getRemoteURL();
+        if (System.getProperty("remote_url") != null) {
+            capabilities.setCapability("browserName", config.getBrowser());
+            Configuration.browserSize = config.getBrowserSize();
+            Configuration.baseUrl = config.getBaseUrl();
+            Configuration.browserVersion = config.getBrowserVersion();
         }
-        capabilities.setCapability("browserName", config.getBrowser());
-        Configuration.browserSize = config.getBrowserSize();
-        Configuration.baseUrl = config.getBaseUrl();
-        Configuration.browserVersion = config.getBrowserVersion();
+        else {
+            System.setProperty("properties", "local");
+            DriverConfig configLoc = ConfigFactory.create(DriverConfig.class, System.getProperties());
+            capabilities.setCapability("browserName", configLoc.getBrowser());
+            Configuration.browserSize = configLoc.getBrowserSize();
+            Configuration.baseUrl = configLoc.getBaseUrl();
+            Configuration.browserVersion = configLoc.getBrowserVersion();
+        }
+
     }
+
 
 
     @AfterEach

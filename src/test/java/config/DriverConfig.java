@@ -24,8 +24,5 @@ public interface DriverConfig extends Config {
     @DefaultValue("1500x1200")
     String getBrowserSize();
 
-    @Key("remoteUrl")
-    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
-    String getRemoteURL();
 
 }
