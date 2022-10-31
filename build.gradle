@@ -22,6 +22,7 @@ repositories {
 }
 dependencies {
     implementation 'org.aeonbits.owner:owner:1.0.12'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
     testImplementation(
             'com.codeborne:selenide:6.9.0',
             'com.github.javafaker:javafaker:1.0.2',
