@@ -2,8 +2,10 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.DriverConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -24,6 +26,8 @@ public class TestBase {
                 "enableVNC", true,
                 "enableVideo", true
         ));
+        System.setProperty("properties", "remote");
+        DriverConfig config = ConfigFactory.create(DriverConfig.class, System.getProperties());
 
         if (System.getProperty("remote_url") != null) {
 
