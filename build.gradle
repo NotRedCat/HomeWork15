@@ -23,10 +23,10 @@ repositories {
 dependencies {
     implementation 'org.aeonbits.owner:owner:1.0.12'
     testImplementation(
-            'com.codeborne:selenide:6.7.4',
+            'com.codeborne:selenide:6.9.0',
             'com.github.javafaker:javafaker:1.0.2',
             'org.junit.jupiter:junit-jupiter-engine:5.9.1',
-            'org.slf4j:slf4j-simple:2.0.1',
+            'org.slf4j:slf4j-simple:2.0.3',
             'io.qameta.allure:allure-selenide:2.19.0'
     )
 }
