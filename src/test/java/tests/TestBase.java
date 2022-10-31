@@ -25,7 +25,6 @@ public class TestBase {
                 "enableVideo", true
         ));
 
-
         if (System.getProperty("remote_url") != null) {
 
             capabilities.setCapability("browserName", System.getProperty("browser_name"));
